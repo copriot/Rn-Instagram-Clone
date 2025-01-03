@@ -1,11 +1,13 @@
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import RootNavigator from './source/routes/RootNavigator';
 import {NavigationContainer} from '@react-navigation/native';
+import {colors} from './source/constants/colors';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor={colors.WHITE} barStyle="dark-content" />
       <NavigationContainer>
         <RootNavigator />
       </NavigationContainer>
@@ -15,4 +17,6 @@ const App = () => {
 
 export default App;
 
-const styles = StyleSheet.create({container: {flex: 1}});
+const styles = StyleSheet.create({
+  container: {flex: 1, backgroundColor: colors.WHITE},
+});

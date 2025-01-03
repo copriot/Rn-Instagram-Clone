@@ -7,6 +7,7 @@ import {
   IGLogo,
   Messages,
 } from '../../assets/icons';
+import Badge from './Badge';
 
 const Header = () => {
   return (
@@ -14,9 +15,11 @@ const Header = () => {
       <View style={styles.leftSide}>
         <IGLogo />
         <ChevronDown />
+        <Badge />
       </View>
       <View style={styles.rightSide}>
         <Heart />
+
         <Messages />
         <AddFeeds />
       </View>
@@ -32,7 +35,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 5,
     paddingHorizontal: 13,
+    alignItems: 'center',
   },
-  leftSide: {flexDirection: 'row', gap: 8},
+  leftSide: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    gap: 8,
+  },
   rightSide: {flexDirection: 'row', gap: 24},
 });
