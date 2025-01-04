@@ -1,12 +1,15 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors} from '../../constants/colors';
-import Title from './Title';
+import Title, {titleTypes} from './Title';
 
-const Badge = () => {
+const Badge = ({value, customStyle}) => {
   return (
-    <View style={styles.badge}>
-      <Title text="10+" />
+    <View style={[styles.badge, customStyle]}>
+      <Title
+        theme={titleTypes.TEXT_12_400_18}
+        text={`${value}${value > 10 ? '+' : ''}`}
+      />
     </View>
   );
 };
@@ -16,16 +19,11 @@ export default Badge;
 const styles = StyleSheet.create({
   badge: {
     backgroundColor: colors.RED,
-    borderRadius: 10,
+    borderRadius: 99,
     paddingHorizontal: 4,
     height: 18,
     gap: 10,
-  },
-  badgeText: {
-    color: colors.WHITE,
-    fontSize: 12,
-    fontWeight: '400',
-    lineHeight: 18,
     alignItems: 'center',
+    justifyContent: 'center',
   },
 });
