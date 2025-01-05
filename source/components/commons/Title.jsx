@@ -1,11 +1,14 @@
 import {StyleSheet, Text} from 'react-native';
 import React from 'react';
 import {colors} from '../../constants/colors';
+import {fontSizes} from '../../constants/fontSize';
 
 export const titleTypes = {
-  TEXT_12_400_18: 'TEXT_12_400_18',
-  TEXT_16_700: 'TEXT_16_700',
   TEXT_22_700_40: 'TEXT_22_700_40',
+  TEXT_16_700: 'TEXT_16_700',
+  TEXT_14_700_18: 'TEXT_14_700_18',
+  TEXT_14_400_18: 'TEXT_14_400_18',
+  TEXT_12_400_18: 'TEXT_12_400_18',
 };
 
 const Title = ({theme = 'default', text}) => {
@@ -33,5 +36,17 @@ export const styles = {
     fontSize: 22,
     fontWeight: '700',
     lineHeight: 40,
+  }),
+  TEXT_14_700_18: StyleSheet.create({
+    color: colors.BLACK,
+    fontSize: 14,
+    fontWeight: '700',
+    lineHeight: 18,
+  }),
+  TEXT_14_400_18: StyleSheet.create({
+    color: colors.BLACK,
+    fontSizes: 14,
+    fontWeight: '400',
+    lineHeight: 18,
   }),
 };

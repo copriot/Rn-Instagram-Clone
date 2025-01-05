@@ -31,7 +31,7 @@ const Header = ({screenName, isMyProfile}) => {
       ) : //Feeds Sayfasi degilse ve Kendi Profil Sayfamda isem girecek kosul
       isMyProfile ? (
         <View style={[styles.leftSide, {alignItems: 'center'}]}>
-          <Title text={'Müşkülpesent'} theme={titleTypes.TEXT_22_700_40} />
+          <Title text={'Müşkülpesent09'} theme={titleTypes.TEXT_22_700_40} />
           <Badge value={11} />
         </View>
       ) : (
