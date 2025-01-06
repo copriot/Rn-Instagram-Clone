@@ -7,4 +7,5 @@ export const colors = {
   RED: '#FE0135',
   HASHTAG: '#004C8B',
   NEUTRAL: '#6E6E6E',
+  CIRCLE_GRAY: '#C4C4C4',
 };

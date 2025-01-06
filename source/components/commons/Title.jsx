@@ -9,6 +9,7 @@ export const titleTypes = {
   TEXT_14_700_18: 'TEXT_14_700_18',
   TEXT_14_400_18: 'TEXT_14_400_18',
   TEXT_12_400_18: 'TEXT_12_400_18',
+  TEXT_12_400_14: 'TEXT_12_400_14',
 };
 
 const Title = ({theme = 'default', text}) => {
@@ -23,6 +24,13 @@ export const styles = {
     fontSize: 12,
     fontWeight: '400',
     lineHeight: 18,
+    alignItems: 'center',
+  }),
+  TEXT_12_400_14: StyleSheet.create({
+    color: colors.BLACK,
+    fontSize: 12,
+    fontWeight: '400',
+    lineHeight: 14,
     alignItems: 'center',
   }),
   TEXT_16_700: StyleSheet.create({

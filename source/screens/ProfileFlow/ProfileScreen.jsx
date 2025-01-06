@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, FlatList} from 'react-native';
 import React from 'react';
 import Header from '../../components/commons/Header';
 import {routes} from '../../constants/routeNames';
@@ -7,11 +7,14 @@ import ProfileData from '../../components/ProfileFlow/ProfileData';
 import Page from '../../components/commons/Page';
 import {colors} from '../../constants/colors';
 import CustomButtons from '../../components/commons/CustomBottoms/CustomButtons';
+import PressableIcon from './PressableIcon';
+import SavedIGStories from './SavedIGStories';
 
-const imgSrc =
+export const imgSrc =
   'https://s3-alpha-sig.figma.com/img/260a/cb7f/837eef41ed89178bb8849abaae20e34a?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DvbX-tw2QbNG0GxnKavimh-1c2WTJvtRNSNHoTW29z4WzDmZeDMMpcO-RaxR3pcwrA5Gn2yLqh868LE5OkluSHcw6oZPE8dtELOvmMuEoCDLcj~6mzMrwBA2FDjAVnZvLmfoO9q4T-Zd6tpKrLB5VJ1yWY80gSSZSL1yUoAY7C-A9fzx9DQG2OzCfa4PTA3Y~g8gSFNPwgPYlTpHJahImlUd8wsrvIMvWnSVASKqfiW~ydPTNw4wqi-RBxSdRU9vsA~09oN~FZY3rFMh9AOvl0v6jTw4LA3o-Aid0UuCR5VpfqLJNwnAum0WFJcmLJ8hrpzeyEKkuyDi6n2RFqZe2g__';
 
 const ProfileScreen = () => {
+  const dummyArray = [1, 1, 1, 1, 1, 1, 1, 1];
   return (
     <View>
       <Header screenName={routes.PROFILE_SCREEN} isMyProfile={true} />
@@ -73,9 +76,17 @@ const ProfileScreen = () => {
               <CustomButtons title={'Message'} theme={'outline'} />
               <CustomButtons title={'Subscribe'} theme={'outline'} />
               <CustomButtons title={'Contact'} theme={'outline'} />
+              <PressableIcon />
             </View>
           </View>
         </View>
+        <FlatList
+          data={dummyArray}
+          renderItem={item => <SavedIGStories />}
+          keyExtractor={(item, index) => index.toString()}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
       </Page>
     </View>
   );
