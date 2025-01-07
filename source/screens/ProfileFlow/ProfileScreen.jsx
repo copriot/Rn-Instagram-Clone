@@ -1,4 +1,11 @@
-import {StyleSheet, Text, View, Image, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  FlatList,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import Header from '../../components/commons/Header';
 import {routes} from '../../constants/routeNames';
@@ -10,6 +17,7 @@ import CustomButtons from '../../components/commons/CustomBottoms/CustomButtons'
 import PressableIcon from './PressableIcon';
 import SavedIGStories from './SavedIGStories';
 import TabNaviBar from './TabNaviBar';
+import GridPhotoView from './GridPhotoView';
 
 export const imgSrc =
   'https://s3-alpha-sig.figma.com/img/260a/cb7f/837eef41ed89178bb8849abaae20e34a?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DvbX-tw2QbNG0GxnKavimh-1c2WTJvtRNSNHoTW29z4WzDmZeDMMpcO-RaxR3pcwrA5Gn2yLqh868LE5OkluSHcw6oZPE8dtELOvmMuEoCDLcj~6mzMrwBA2FDjAVnZvLmfoO9q4T-Zd6tpKrLB5VJ1yWY80gSSZSL1yUoAY7C-A9fzx9DQG2OzCfa4PTA3Y~g8gSFNPwgPYlTpHJahImlUd8wsrvIMvWnSVASKqfiW~ydPTNw4wqi-RBxSdRU9vsA~09oN~FZY3rFMh9AOvl0v6jTw4LA3o-Aid0UuCR5VpfqLJNwnAum0WFJcmLJ8hrpzeyEKkuyDi6n2RFqZe2g__';
@@ -17,7 +25,7 @@ export const imgSrc =
 const ProfileScreen = () => {
   const dummyArray = [1, 1, 1, 1, 1, 1, 1, 1];
   return (
-    <View>
+    <ScrollView>
       <Header screenName={routes.PROFILE_SCREEN} isMyProfile={true} />
 
       <Page>
@@ -87,10 +95,12 @@ const ProfileScreen = () => {
           keyExtractor={(item, index) => index.toString()}
           horizontal
           showsHorizontalScrollIndicator={false}
+          nestedScrollEnabled={true}
         />
       </Page>
       <TabNaviBar />
-    </View>
+      <GridPhotoView />
+    </ScrollView>
   );
 };
 

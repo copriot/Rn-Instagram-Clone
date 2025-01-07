@@ -3,7 +3,12 @@ import React from 'react';
 import RootNavigator from './source/routes/RootNavigator';
 import {NavigationContainer} from '@react-navigation/native';
 import {colors} from './source/constants/colors';
+import {LogBox} from 'react-native';
 
+// Bu satırı App.js veya ana dosyanızda ekleyin
+LogBox.ignoreLogs([
+  'VirtualizedLists should never be nested', // Uyarıyı göz ardı eder
+]);
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>

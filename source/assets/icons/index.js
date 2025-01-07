@@ -7,3 +7,5 @@ export {ChevronLeft} from './ChevronLeft';
 export {VerifiedBadge} from './VerifiedBadge';
 export {Notification} from './Notification';
 export {Options} from './Options';
+export {WhiteReels} from './WhiteReels';
+export {WhiteCarousel} from './WhiteCarousel';
